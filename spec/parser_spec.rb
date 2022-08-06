@@ -1,0 +1,37 @@
+require_relative "../app/parser"
+require_relative "../app/file_readers/base"
+require_relative "../app/file_readers/csv_reader"
+require "pry"
+
+RSpec.describe Parser do
+  let(:fixture_file_path) { File.join(__dir__, "fixtures", "files", "fixture_logs.log") }
+  let(:expected_output) do
+    <<~EOS
+      All page views
+      /help_page/1 6 visits
+      /contact 3 visits
+      /home 3 visits
+      /about/2 3 visits
+      /index 3 visits
+      /about 2 visits
+
+      Unique views
+      /help_page/1 5 visits
+      /home 3 visits
+      /index 3 visits
+      /contact 2 visits
+      /about/2 2 visits
+      /about 2 visits\n
+    EOS
+  end
+
+  subject { Parser.new(fixture_file_path) }
+
+  describe "parse" do
+    context "with correct file path" do
+      it "returns to stdout list of webpages with most page views and most unique page views, ordered descending" do
+        expect { subject.call }.to output(expected_output).to_stdout
+      end
+    end
+  end
+end
