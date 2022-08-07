@@ -23,8 +23,6 @@ class Parser
   end
 
   def call
-    raise ArgumentError, "File does not exist or does not have .log extension" unless file.log_path_valid?
-    
     most_page_views = parsed_logs.most_page_views
     most_unique_page_views = parsed_logs.most_unique_page_views
 
