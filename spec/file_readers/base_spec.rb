@@ -33,5 +33,13 @@ RSpec.describe FileReaders::Base do
         expect { subject }.to raise_error(ArgumentError)
       end
     end
+
+    context "when file is empty" do
+      let(:file) { "empty_file.log" }
+
+      it "raises ArgumentError" do
+        expect { subject }.to raise_error(ArgumentError)
+      end
+    end
   end
 end
