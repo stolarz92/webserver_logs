@@ -3,7 +3,6 @@
 require_relative "../app/parser"
 
 RSpec.describe Parser do
-  let(:fixture_file_path) { File.join(__dir__, "fixtures", "files", "fixture_logs.log") }
   let(:expected_output) do
     <<~EOS
       All page views
@@ -24,12 +23,22 @@ RSpec.describe Parser do
     EOS
   end
 
-  subject { Parser.new(fixture_file_path) }
+  subject { Parser.new(path) }
 
   describe "parse" do
     context "with correct file path" do
+      let(:path) { File.join(__dir__, "fixtures", "files", "fixture_logs.log") }
+
       it "returns to stdout list of webpages with most page views and most unique page views, ordered descending" do
         expect { subject.call }.to output(expected_output).to_stdout
+      end
+    end
+
+    context "with empty file path" do
+      let(:path) { '' }
+
+      it "raises ArgumentError" do
+        expect { subject.call }.to raise_error(ArgumentError)
       end
     end
   end
