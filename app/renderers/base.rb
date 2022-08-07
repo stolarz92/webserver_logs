@@ -1,14 +1,21 @@
 module Renderers
   class Base
-    def initialize(header, logs)
-      @header = header
+    def initialize(logs)
       @logs = logs
     end
 
     def render
-      puts @header
-      puts render_view
+      puts self.class::HEADER
+      puts render_body
       puts "\n"
+    end
+
+    private
+
+    def render_body
+      @logs.map do |link, visits|
+        line(link, visits)
+      end
     end
   end
 end

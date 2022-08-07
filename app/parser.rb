@@ -2,19 +2,17 @@ require "csv"
 require "pry"
 require_relative "./file_readers/csv_reader"
 require_relative "./presenters/log_presenter"
-require_relative "./renderers/classic_view"
+require_relative "./renderers/all_logs"
+require_relative "./renderers/unique_logs"
 
 class Parser
-  HEADER = "All page views".freeze
-  UNIQUE_HEADER = "Unique views".freeze
-
   attr_reader :logs_file_path
 
   def initialize(
     logs_file_path,
     file_reader: FileReaders::CsvReader,
     presenter: Presenters::LogPresenter,
-    renderer: Renderers::ClassicView
+    renderer: Renderers
   )
     @logs_file_path = logs_file_path
     @file_reader = file_reader
@@ -28,8 +26,8 @@ class Parser
     most_page_views = parsed_logs.most_page_views
     most_unique_page_views = parsed_logs.most_unique_page_views
 
-    @renderer.new(HEADER, most_page_views).render
-    @renderer.new(UNIQUE_HEADER, most_unique_page_views).render
+    @renderer::AllLogs.new(most_page_views).render
+    @renderer::UniqueLogs.new(most_unique_page_views).render
   end
 
   private

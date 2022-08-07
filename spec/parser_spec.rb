@@ -16,12 +16,12 @@ RSpec.describe Parser do
       /about 2 visits
 
       Unique views
-      /help_page/1 5 visits
-      /home 3 visits
-      /index 3 visits
-      /contact 2 visits
-      /about/2 2 visits
-      /about 2 visits\n
+      /help_page/1 5 unique views
+      /home 3 unique views
+      /index 3 unique views
+      /contact 2 unique views
+      /about/2 2 unique views
+      /about 2 unique views\n
     EOS
   end
 
