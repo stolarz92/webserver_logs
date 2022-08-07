@@ -1,3 +1,4 @@
+require 'pry'
 module Presenters
   class LogPresenter
     attr_reader :logs
