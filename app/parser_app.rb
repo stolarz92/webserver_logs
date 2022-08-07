@@ -6,7 +6,7 @@ require_relative "./presenters/log_presenter"
 require_relative "./renderers/all_logs"
 require_relative "./renderers/unique_logs"
 
-class Parser
+class ParserApp
   attr_reader :logs_file_path
 
   def initialize(

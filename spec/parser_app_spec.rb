@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "../app/parser"
+require_relative "../app/parser_app"
 
-RSpec.describe Parser do
+RSpec.describe ParserApp do
   let(:expected_output) do
     <<~EOS
       All page views
@@ -23,7 +23,7 @@ RSpec.describe Parser do
     EOS
   end
 
-  subject { Parser.new(path) }
+  subject { ParserApp.new(path) }
 
   describe "parse" do
     context "with correct file path" do
