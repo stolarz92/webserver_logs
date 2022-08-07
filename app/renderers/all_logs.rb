@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'base'
+require_relative "base"
 
 module Renderers
   class AllLogs < Base
-    HEADER = "All page views".freeze
+    HEADER = "All page views"
 
     private
 

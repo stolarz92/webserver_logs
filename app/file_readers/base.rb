@@ -2,9 +2,9 @@
 
 module FileReaders
   class Base
-    ALLOWED_EXTENSION = ".log".freeze
+    ALLOWED_EXTENSION = ".log"
     private_constant :ALLOWED_EXTENSION
-    
+
     attr_reader :log_path
 
     def initialize(log_path)
@@ -16,7 +16,7 @@ module FileReaders
     end
 
     def log_path_valid?
-      @log_path.exist? && @log_path.extname == ALLOWED_EXTENSION ? true : false
+      @log_path.exist? && @log_path.extname == ALLOWED_EXTENSION
     end
   end
 end

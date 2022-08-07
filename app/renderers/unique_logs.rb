@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require_relative 'base'
+require_relative "base"
 
 module Renderers
   class UniqueLogs < Base
-    HEADER = "Unique views".freeze
-    
+    HEADER = "Unique views"
+
     private
 
     def line(key, value)

@@ -10,7 +10,7 @@ RSpec.describe FileReaders::CsvReader do
   describe "parse" do
     it "correctly parse csv style file and returns array of arrays" do
       result = subject.parse
-      
+
       expect(result).to be_kind_of(Array)
       expect(result.first).to be_kind_of(Array)
     end

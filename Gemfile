@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-gem 'rubocop', require: false
-gem 'rspec'
+gem "rspec"
+gem "rubocop", require: false

@@ -13,11 +13,11 @@ RSpec.describe Renderers::UniqueLogs do
 
     it "prints body to stdout view" do
       expected_output = <<~EOS
-          Unique views
-          first 10 unique views
-          second 20 unique views
-          third 30 unique views\n
-        EOS
+        Unique views
+        first 10 unique views
+        second 20 unique views
+        third 30 unique views\n
+      EOS
       expect { subject.render }.to output(expected_output).to_stdout
     end
   end
