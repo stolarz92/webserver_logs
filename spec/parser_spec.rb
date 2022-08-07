@@ -1,7 +1,4 @@
 require_relative "../app/parser"
-require_relative "../app/file_readers/base"
-require_relative "../app/file_readers/csv_reader"
-require "pry"
 
 RSpec.describe Parser do
   let(:fixture_file_path) { File.join(__dir__, "fixtures", "files", "fixture_logs.log") }

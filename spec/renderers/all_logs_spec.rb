@@ -2,6 +2,7 @@ require_relative "../../app/renderers/unique_logs"
 
 RSpec.describe Renderers::AllLogs do
   let(:logs) { { first: 10, second: 20, third: 30 } }
+  
   subject { Renderers::AllLogs.new(logs) }
 
   describe "render" do

@@ -1,8 +1,6 @@
 require_relative "../../app/presenters/log_presenter"
 require_relative "../../app/file_readers/csv_reader"
 
-require "pry"
-
 RSpec.describe Presenters::LogPresenter do
   let(:fixture_file_path) { File.join(Dir.pwd, "spec", "fixtures", "files", "fixture_logs.log") }
   let(:parsed_file) { FileReaders::CsvReader.new(fixture_file_path).parse }
