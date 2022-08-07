@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "../../app/presenters/log_presenter"
 require_relative "../../app/file_readers/csv_reader"
 

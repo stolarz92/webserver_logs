@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "../../app/file_readers/csv_reader"
 
 RSpec.describe FileReaders::CsvReader do

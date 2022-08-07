@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "csv"
 require "pry"
 require_relative "./file_readers/csv_reader"

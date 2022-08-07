@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "../../app/renderers/unique_logs"
 
 RSpec.describe Renderers::UniqueLogs do

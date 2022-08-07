@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FileReaders
   class Base
     ALLOWED_EXTENSION = ".log".freeze

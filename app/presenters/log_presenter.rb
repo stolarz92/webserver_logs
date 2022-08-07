@@ -1,4 +1,5 @@
-require 'pry'
+# frozen_string_literal: true
+
 module Presenters
   class LogPresenter
     attr_reader :logs
