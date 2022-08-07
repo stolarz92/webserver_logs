@@ -2,3 +2,5 @@
 
 gem "rspec"
 gem "rubocop", require: false
+gem "pry", require: false
+
